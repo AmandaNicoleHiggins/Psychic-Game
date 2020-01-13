@@ -57,7 +57,7 @@ document.onkeyup = function (event) {
 
     }
 
-    // Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties.
+    // Creating a variable to hold our new HTML.
     var html =
       "<p>wins: " + wins + "</p>" +
       "<p>losses: " + losses + "</p>" +
