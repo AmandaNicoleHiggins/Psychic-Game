@@ -12,8 +12,8 @@ var computerChose = [];
 
 window.onload = function () {
   // Randomly chooses a choice from the options array. This is the Computer's guess.
-  var computerLetter = computerChoice[Math.floor(Math.random() * computerChoice.length)];
-  computerChose.push(computerLetter);
+  var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
+  computerChose.push(computerGuess);
   console.log(computerChose[0]);
 }
 
@@ -35,8 +35,8 @@ document.onkeyup = function (event) {
       guessesLeft = 9;
       lettersGuessed = [];
       computerChose = [];
-      var computerLetter = computerChoice[Math.floor(Math.random() * computerChoice.length)];
-      computerChose.push(computerLetter);
+      var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
+      computerChose.push(computerGuess);
       console.log(computerChose[0]);
     }
 
