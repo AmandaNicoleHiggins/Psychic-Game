@@ -14,21 +14,23 @@ window.onload = function () {
   // Randomly chooses a choice from the options array. This is the Computer's guess.
   var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
   computerChose.push(computerGuess);
-  console.log(computerChose[0]);
+  console.log(computerChose);
 }
 
 // User input
 
 // Function for when user presses are key
 document.onkeyup = function (event) {
+  console.log("event", event)
   var userGuess = event.key;
   console.log(userGuess);
 
+// Makes sure a letter is selected
   var charCode = typeof event.which == "letter" ? event.which : event.keyCode;
   if (charCode) {
     lettersGuessed.push(String.fromCharCode(charCode));
 
-// When user = computer guess - win and guesses are left
+// When user = computer guess - win and guesses are left and resets
     if ((userGuess === computerChose[0]) && (guessesLeft > 0)) {
       wins++;
       console.log("you win");
@@ -46,7 +48,7 @@ document.onkeyup = function (event) {
       console.log("guess again");
     }
 
-  // When user guess is not strictly equal to computer choice, but no guesses are left
+  // When user guess is not strictly equal to computer choice, but no guesses are left and reset
     if ((userGuess !== computerChose[0]) && (guessesLeft <= 0)) {
       guessesLeft = 9;
       losses++;
@@ -57,7 +59,7 @@ document.onkeyup = function (event) {
 
     }
 
-    // Creating a variable to hold our new HTML.
+    // Creating a variable to hold our new HTML. HTML will keep track of user gueses, wins, losses
     var html =
       "<p>wins: " + wins + "</p>" +
       "<p>losses: " + losses + "</p>" +
